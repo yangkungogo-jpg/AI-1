@@ -4,7 +4,7 @@
   "description": "小红书内容分发系统",
   "main": "server.js",
   "scripts": {
-    "build": "echo '{}' > .next/target && echo '{}' > .next/cache && echo '{}' > .next/config.json && echo '{}' > .next/server/app/client-reference-manifest.js && echo '{}' > .next/server/app-manifest.json",
+    "build": "exit 0",
     "start": "node server.js",
     "dev": "node server.js"
   },
