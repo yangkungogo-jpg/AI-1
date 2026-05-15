@@ -58,7 +58,6 @@ function renderContent(content) {
 
   if (content.image_url) {
     imageSection.style.display = 'block';
-    // 构建完整的图片 URL
     const imageSrc = content.image_url.startsWith('http')
       ? content.image_url
       : window.location.origin + content.image_url;
@@ -81,10 +80,12 @@ function renderContent(content) {
   topicsContainer.innerHTML = '';
 
   if (content.topics && content.topics.length > 0) {
-    content.topics.forEach((topic, index) => {
+    content.topics.forEach((topic) => {
       const topicItem = document.createElement('div');
       topicItem.className = 'topic-item';
-      topicItem.innerHTML = `<span>#${topic}</span>`;
+      const span = document.createElement('span');
+      span.textContent = '#' + topic;
+      topicItem.appendChild(span);
       topicsContainer.appendChild(topicItem);
     });
   }
